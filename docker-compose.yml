@@ -26,6 +26,10 @@ services:
     expose:
       - 8080
 
+    # Mount the container log directory to the local log directory
+    volumes:
+      - ./log/uwsgi:/var/log/uwsgi
+
   nginx:
 
     # Build the nginx service using the Dockerfile in the nginx directory
@@ -40,4 +44,8 @@ services:
     # Any ports listed using `ports` will be exposed to the outside world
     ports:
       - "80:80"
+
+    # Mount the container log directory to the local log directory
+    volumes:
+      - ./log/nginx:/var/log/nginx
 
