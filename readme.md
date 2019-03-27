@@ -1,7 +1,7 @@
 ### Simple Flask app running behind Nginx & uWSGI in a Docker container
 
 ```sh
-https://github.com/Julian-Nash/docker-flask-uwsgi-nginx-simple.git
+git clone https://github.com/Julian-Nash/docker-flask-uwsgi-nginx-simple.git
 ```
 
 ```sh
