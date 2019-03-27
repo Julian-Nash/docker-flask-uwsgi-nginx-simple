@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+
+  # Define our individual services
+
+  flask:
+
+    # Build the flask service using the Dockerfile in the flask directory
+    build: ./flask
+
+    # Give our flask container a friendly name
+    container_name: flask
+
+    # Instruct Docker to always restart the service
+    restart: always
+
+    # Use environment to set any environment variables
+    environment:
+      - APP_NAME=MyFlaskApp
+      - DB_NAME=root
+      - DB_PASSWORD=example
+
+    # Any ports listed using `expose` will only be accessible to internal services/containers
+    # uWSGI will be serving our Flask application on port 8080
+    expose:
+      - 8080
+
+  nginx:
+
+    # Build the nginx service using the Dockerfile in the nginx directory
+    build: ./nginx
+
+    # Give our nginx container a friendly name
+    container_name: nginx
+
+    # Instruct Docker to always restart the service
+    restart: always
+
+    # Any ports listed using `ports` will be exposed to the outside world
+    ports:
+      - "80:80"
+
