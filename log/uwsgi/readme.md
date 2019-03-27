@@ -1,4 +1,4 @@
-Directory for nginx logs
+Directory for uWSGI logs
 
 A better choice in production may be to change the `volumes` section in the `docker-compose.yml` under the `flask` service to the following:
 
