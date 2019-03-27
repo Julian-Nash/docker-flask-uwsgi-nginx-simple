@@ -12,4 +12,4 @@ http://127.0.0.1/
 
 ### Notes
 
-`nginx` logs and `uwsgi` logs will be logged to `log/nginx` and `log/uwsgi` respectively
+`nginx` logs and `uwsgi` logs will be logged to `log/nginx` and `log/uwsgi` respectively.

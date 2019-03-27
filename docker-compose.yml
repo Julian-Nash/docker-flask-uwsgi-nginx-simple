@@ -18,8 +18,6 @@ services:
     # Use environment to set any environment variables
     environment:
       - APP_NAME=MyFlaskApp
-      - DB_NAME=root
-      - DB_PASSWORD=example
 
     # Any ports listed using `expose` will only be accessible to internal services/containers
     # uWSGI will be serving our Flask application on port 8080
@@ -27,6 +25,8 @@ services:
       - 8080
 
     # Mount the container log directory to the local log directory
+    # Consider changing this to /var/log/uwsgi:/var/log/uwsgi in production
+    # Just make sure the directory exists before running docker-compose up --build
     volumes:
       - ./log/uwsgi:/var/log/uwsgi
 
@@ -46,6 +46,8 @@ services:
       - "80:80"
 
     # Mount the container log directory to the local log directory
+    # Consider changing this to /var/log/nginx:/var/log/nginx in production
+    # Just make sure the directory exists before running docker-compose up --build
     volumes:
       - ./log/nginx:/var/log/nginx
 
